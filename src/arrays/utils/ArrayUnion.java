@@ -7,6 +7,7 @@ package arrays.utils;
 import java.util.Arrays;
 import java.util.Comparator;
 
+//local code review (vtegza): make method non static @ 06.04.15
 public class ArrayUnion {
 
     /**
@@ -23,6 +24,7 @@ public class ArrayUnion {
         final int rLenght = rArray.length;
         int rIndex = lLenght;
         Comparator<PojoNumber> numberComparator = new NumberComparator();
+        //local code review (vtegza): move variables to the place where they should be used @ 06.04.15
         PojoNumber[] resultArray = null;
         PojoNumber[] tmpArray = Arrays.copyOf(lArray, lLenght+rLenght);
         PojoNumber[] lArraySorted =  Arrays.copyOf(lArray, lLenght);
@@ -59,6 +61,7 @@ public class ArrayUnion {
         final int rLenght = rArray.length;
         int index = 0;
         Comparator<PojoNumber> numberComparator = new NumberComparator();
+        //local code review (vtegza): move variables to the place where they should be used @ 06.04.15
         PojoNumber[] resultArray = null;
         PojoNumber[] tmpArray = new PojoNumber[(lLenght > rLenght)?rLenght:lLenght];
         PojoNumber[] lArraySorted =  Arrays.copyOf(lArray, lLenght);
@@ -96,6 +99,7 @@ public class ArrayUnion {
         final int rLenght = rArray.length;
         int index = 0;
         Comparator<PojoNumber> numberComparator = new NumberComparator();
+        //local code review (vtegza): move variables to the place where they should be used @ 06.04.15
         PojoNumber[] resultArray = null;
         PojoNumber[] tmpArray = new PojoNumber[rLenght+lLenght];
         PojoNumber[] lArraySorted =  Arrays.copyOf(lArray, lLenght);
@@ -181,6 +185,7 @@ public class ArrayUnion {
             }
 
             resultArray = new PojoNumber[tmpIndex];
+            //local code review (vtegza): use array copy here @ 06.04.15
             for (int i = 0; i<tmpIndex; i++)
             {
                 resultArray[i] = tmpArray[i];

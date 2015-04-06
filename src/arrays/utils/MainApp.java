@@ -32,7 +32,7 @@ public class MainApp {
         Data mergeData = new Data(MainApp.mergeLArray, MainApp.mergeRArray, MainApp.mergeResultArray);
         Data innerUnionData = new Data(MainApp.iUnionLArray, MainApp.iUnionRArray, MainApp.iUnionResultArray);
         Data outerUnionData = new Data(MainApp.oUnionLArray, MainApp.oUnionRArray, MainApp.oUnionResultArray);
-
+        //local code review (vtegza): extract separated calls to the separated method, keep all needed data inside of those test methods @ 06.04.15
 
         mergeResult = ArrayUnion.arraysMerge(mergeData.getLArray(), mergeData.getRArray());
         System.out.println("Merging result array:");

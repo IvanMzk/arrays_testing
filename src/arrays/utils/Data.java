@@ -10,8 +10,9 @@ public class  Data{
     private final PojoNumber[] pojoRArray;
     private final PojoNumber[] pojoResultArray;
 
+    //local code review (vtegza): should be public @ 06.04.15
     Data(int[] lArray, int[] rArray, int[] resultArray) {
-
+        //local code review (vtegza): keep appl calculation in methods not in data some creator data style @ 06.04.15
         pojoLArray = new PojoNumber[lArray.length];
         pojoRArray = new PojoNumber[rArray.length];
         pojoResultArray = new PojoNumber[resultArray.length];
