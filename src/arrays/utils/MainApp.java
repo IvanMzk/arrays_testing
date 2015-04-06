@@ -54,13 +54,17 @@ public class MainApp {
         else
         {System.out.println("ERROR. Inner union result doesnt match etalon");}
 
-
-
-
-
+        outerUnionResult = ArrayUnion.arraysOuterUnion(outerUnionData.getLArray(), outerUnionData.getRArray());
+        System.out.println("Outer union result array:");
+        System.out.println(Arrays.toString(outerUnionResult));
+        System.out.println("Etalon array:");
+        System.out.println(Arrays.toString(outerUnionData.getResultArray()));
+        if (ArrayUnion.testResult(outerUnionResult, outerUnionData.getResultArray()))
+        {System.out.println("OK. Outer union result matches etalon");}
+        else
+        {System.out.println("ERROR. Outer union result doesnt match etalon");}
 
     }
-
-
+    
 
 }
