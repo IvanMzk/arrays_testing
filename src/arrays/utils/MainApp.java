@@ -16,19 +16,46 @@ public class MainApp {
     private static final int[] iUnionRArray = {3,5,24,4,1,2,34,45,32,5};
     private static final int[] iUnionResultArray = {5,4,32,1};
 
-    private static final int[] uUnionLArray = {1,5,4,23,65,32,78};
-    private static final int[] uUnionRArray = {3,5,24,4,1,2,34,45,32,5};
-    private static final int[] uUnionResultArray = {23,65,78,3,24,2,34,45};
+    private static final int[] oUnionLArray = {1,5,4,23,65,32,78};
+    private static final int[] oUnionRArray = {3,5,24,4,1,2,34,45,32,5};
+    private static final int[] oUnionResultArray = {23,65,78,3,24,2,34,45};
 
 
 
     public static void main(String[] args) {
 
         PojoNumber[] mergeResult = null;
+        PojoNumber[] innerUnionResult = null;
+        PojoNumber[] outerUnionResult = null;
+
 
         Data mergeData = new Data(MainApp.mergeLArray, MainApp.mergeRArray, MainApp.mergeResultArray);
+        Data innerUnionData = new Data(MainApp.iUnionLArray, MainApp.iUnionRArray, MainApp.iUnionResultArray);
+        Data outerUnionData = new Data(MainApp.oUnionLArray, MainApp.oUnionRArray, MainApp.oUnionResultArray);
+
+
         mergeResult = ArrayUnion.arraysMerge(mergeData.getLArray(), mergeData.getRArray());
+        System.out.println("Merging result array:");
         System.out.println(Arrays.toString(mergeResult));
+        System.out.println("Etalon array:");
+        System.out.println(Arrays.toString(mergeData.getResultArray()));
+        if (ArrayUnion.testResult(mergeResult, mergeData.getResultArray()))
+        {System.out.println("OK. Merging result matches etalon");}
+        else
+        {System.out.println("ERROR. Merging result doesnt match etalon");}
+
+        innerUnionResult = ArrayUnion.arraysInnerUnion(innerUnionData.getLArray(), innerUnionData.getRArray());
+        System.out.println("Inner union result array:");
+        System.out.println(Arrays.toString(innerUnionResult));
+        System.out.println("Etalon array:");
+        System.out.println(Arrays.toString(innerUnionData.getResultArray()));
+        if (ArrayUnion.testResult(innerUnionResult, innerUnionData.getResultArray()))
+        {System.out.println("OK. Inner union result matches etalon");}
+        else
+        {System.out.println("ERROR. Inner union result doesnt match etalon");}
+
+
+
 
 
 
