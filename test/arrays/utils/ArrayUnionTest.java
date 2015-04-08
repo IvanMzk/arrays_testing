@@ -40,4 +40,29 @@ public class ArrayUnionTest {
 
 
     }
+
+    @org.junit.Test
+    public void testArraysMerge1() throws Exception {
+
+    }
+
+    @org.junit.Test
+    public void testArraysInnerUnion() throws Exception {
+
+    }
+
+    @org.junit.Test
+    public void testArraysOuterUnion() throws Exception {
+
+    }
+
+    @org.junit.Test
+    public void testDeleteDublicates() throws Exception {
+
+    }
+
+    @org.junit.Test
+    public void testTestResult() throws Exception {
+
+    }
 }
