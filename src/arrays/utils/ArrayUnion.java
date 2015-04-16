@@ -215,17 +215,5 @@ public class ArrayUnion {
     }
 
 
-    public boolean testResult(PojoNumber[] result, PojoNumber[] etalon)
-    {
-        PojoNumber[] resultSorted = Arrays.copyOf(result, result.length);
-        PojoNumber[] etalonSorted = Arrays.copyOf(etalon, etalon.length);
-        Comparator<PojoNumber> numberComparator = new NumberComparator();
-
-        Arrays.sort(resultSorted, numberComparator);
-        Arrays.sort(etalonSorted, numberComparator);
-
-        return Arrays.equals(resultSorted, etalonSorted);
-    }
-
 
 }

@@ -26,7 +26,11 @@ public class MainApp {
 
     public static void main(String[] args) {
 
+        /*
         try {
+
+
+
             PojoNumber[] mergeResult = null;
             PojoNumber[] innerUnionResult = null;
             PojoNumber[] outerUnionResult = null;
@@ -73,12 +77,14 @@ public class MainApp {
                 System.out.println("ERROR. Outer union result doesnt match etalon");
             }
 
+
         }
         catch (NullArrayRefException e)
         {
             System.out.println(e.getErrorCode());
             e.printStackTrace();
         }
+        */
     }
 
 }
