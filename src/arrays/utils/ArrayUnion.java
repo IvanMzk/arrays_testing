@@ -15,21 +15,28 @@ public class ArrayUnion {
      * @param lArray array
      * @param rArray array
      * @return array that is result of merging without duplicates of lArray and rArray
+     *
      */
 
 
-    public static PojoNumber[] arraysMerge(PojoNumber[] lArray, PojoNumber[] rArray){
+    public PojoNumber[] arraysMerge(PojoNumber[] lArray, PojoNumber[] rArray) throws NullArrayRefException
+    {
+
+        if (null == lArray && null == rArray)
+        {throw new NullArrayRefException("Input params lArray and rArray references are nulls");}
+        if (null == lArray)
+        {throw new NullArrayRefException("Input param lArray reference is null");}
+        if (null == rArray)
+        {throw new NullArrayRefException("Input param rArray reference is null");}
+
 
         final int lLenght = lArray.length;
         final int rLenght = rArray.length;
+
         int rIndex = lLenght;
-        Comparator<PojoNumber> numberComparator = new NumberComparator();
-        //local code review (vtegza): move variables to the place where they should be used @ 06.04.15
-        PojoNumber[] resultArray = null;
         PojoNumber[] tmpArray = Arrays.copyOf(lArray, lLenght+rLenght);
         PojoNumber[] lArraySorted =  Arrays.copyOf(lArray, lLenght);
-
-
+        Comparator<PojoNumber> numberComparator = new NumberComparator();
         Arrays.sort(lArraySorted,numberComparator);
 
         for (PojoNumber rItem : rArray)
@@ -40,11 +47,11 @@ public class ArrayUnion {
             }
         }
 
+        PojoNumber[] resultArray = null;
         resultArray = Arrays.copyOfRange(tmpArray, 0, rIndex);
 
         Arrays.sort(resultArray, numberComparator);
         return deleteDublicates(resultArray);
-        //return resultArray;
     }
 
     /**
@@ -55,17 +62,22 @@ public class ArrayUnion {
      */
 
 
-    public static PojoNumber[] arraysInnerUnion(PojoNumber[] lArray, PojoNumber[] rArray){
+    public PojoNumber[] arraysInnerUnion(PojoNumber[] lArray, PojoNumber[] rArray) throws NullArrayRefException
+    {
+        if (null == lArray && null == rArray)
+        {throw new NullArrayRefException("Input params lArray and rArray references are nulls");}
+        if (null == lArray)
+        {throw new NullArrayRefException("Input param lArray reference is null");}
+        if (null == rArray)
+        {throw new NullArrayRefException("Input param rArray reference is null");}
 
         final int lLenght = lArray.length;
         final int rLenght = rArray.length;
+
         int index = 0;
-        Comparator<PojoNumber> numberComparator = new NumberComparator();
-        //local code review (vtegza): move variables to the place where they should be used @ 06.04.15
-        PojoNumber[] resultArray = null;
         PojoNumber[] tmpArray = new PojoNumber[(lLenght > rLenght)?rLenght:lLenght];
         PojoNumber[] lArraySorted =  Arrays.copyOf(lArray, lLenght);
-
+        Comparator<PojoNumber> numberComparator = new NumberComparator();
         Arrays.sort(lArraySorted,numberComparator);
 
         for (PojoNumber rItem : rArray)
@@ -76,11 +88,11 @@ public class ArrayUnion {
             }
         }
 
+        PojoNumber[] resultArray = null;
         resultArray = Arrays.copyOfRange(tmpArray, 0, index);
 
         Arrays.sort(resultArray, numberComparator);
         return deleteDublicates(resultArray);
-        //return resultArray;
 
     }
 
@@ -93,18 +105,23 @@ public class ArrayUnion {
      */
 
 
-    public static PojoNumber[] arraysOuterUnion(PojoNumber[] lArray, PojoNumber[] rArray){
+    public PojoNumber[] arraysOuterUnion(PojoNumber[] lArray, PojoNumber[] rArray) throws NullArrayRefException
+    {
+        if (null == lArray && null == rArray)
+        {throw new NullArrayRefException("Input params lArray and rArray references are nulls");}
+        if (null == lArray)
+        {throw new NullArrayRefException("Input param lArray reference is null");}
+        if (null == rArray)
+        {throw new NullArrayRefException("Input param rArray reference is null");}
 
         final int lLenght = lArray.length;
         final int rLenght = rArray.length;
+
         int index = 0;
-        Comparator<PojoNumber> numberComparator = new NumberComparator();
-        //local code review (vtegza): move variables to the place where they should be used @ 06.04.15
-        PojoNumber[] resultArray = null;
         PojoNumber[] tmpArray = new PojoNumber[rLenght+lLenght];
         PojoNumber[] lArraySorted =  Arrays.copyOf(lArray, lLenght);
         PojoNumber[] rArraySorted =  Arrays.copyOf(rArray, rLenght);
-
+        Comparator<PojoNumber> numberComparator = new NumberComparator();
 
         Arrays.sort(lArraySorted,numberComparator);
         Arrays.sort(rArraySorted,numberComparator);
@@ -125,6 +142,7 @@ public class ArrayUnion {
             }
         }
 
+        PojoNumber[] resultArray = null;
         resultArray = Arrays.copyOfRange(tmpArray, 0, index);
 
         Arrays.sort(resultArray, numberComparator);
@@ -141,8 +159,12 @@ public class ArrayUnion {
      */
 
 
-    public static PojoNumber[] deleteDublicates(PojoNumber[] array)
+    public PojoNumber[] deleteDublicates(PojoNumber[] array) throws NullArrayRefException
     {
+
+        if (null == array)
+        {throw new NullArrayRefException("Input param array reference is null");}
+
         final int length = array.length;
 
         if (length >= 2)
@@ -150,7 +172,6 @@ public class ArrayUnion {
             int tmpIndex = 0;
             boolean isEqualsSequence = false;
             PojoNumber[] tmpArray = new PojoNumber[length];
-            PojoNumber[] resultArray;
 
             for (int i = 0; i < length-1; i++) {
                 if (array[i].equals(array[i+1]))
@@ -184,12 +205,9 @@ public class ArrayUnion {
                 }
             }
 
-            resultArray = new PojoNumber[tmpIndex];
-            //local code review (vtegza): use array copy here @ 06.04.15
-            for (int i = 0; i<tmpIndex; i++)
-            {
-                resultArray[i] = tmpArray[i];
-            }
+
+            PojoNumber[] resultArray = null;
+            resultArray = Arrays.copyOfRange(tmpArray, 0, tmpIndex);
 
             return resultArray;
         }
@@ -197,7 +215,7 @@ public class ArrayUnion {
     }
 
 
-    public static boolean testResult(PojoNumber[] result, PojoNumber[] etalon)
+    public boolean testResult(PojoNumber[] result, PojoNumber[] etalon)
     {
         PojoNumber[] resultSorted = Arrays.copyOf(result, result.length);
         PojoNumber[] etalonSorted = Arrays.copyOf(etalon, etalon.length);
