@@ -9,19 +9,23 @@ import java.util.Comparator;
 
 public class ArrayUnionTest {
 
-    private PojoNumber[] GetTestArray(int[] array){
+    protected PojoNumber[] GetTestArray(int[] array){
 
-        int i = 0;
-        PojoNumber[] resultArray = new PojoNumber[array.length];
-        for (int item: array)
-        {
-            resultArray[i] = new PojoNumber(item);
-            i++;
+        if (null != array) {
+            int i = 0;
+            PojoNumber[] resultArray = new PojoNumber[array.length];
+            for (int item : array) {
+                resultArray[i] = new PojoNumber(item);
+                i++;
+            }
+            return resultArray;
         }
-        return resultArray;
+        else
+            return null;
+
     }
 
-    private boolean CompareTestArrays(PojoNumber[] test, PojoNumber[] etalon){
+     boolean CompareTestArrays(PojoNumber[] test, PojoNumber[] etalon){
 
         Comparator<PojoNumber> comparator = new NumberComparator();
         Arrays.sort(test, comparator);
@@ -31,7 +35,7 @@ public class ArrayUnionTest {
 
     }
 
-
+//=============Normal input data testing===========================
 
     @Test
     public void testArraysMerge() throws Exception {
@@ -141,8 +145,15 @@ public class ArrayUnionTest {
 
 
         //assert returned value
-        System.out.println(Arrays.toString(returnedValue));
         Assert.assertTrue(CompareTestArrays(returnedValue, expectedValue));
 
     }
+
+
+    //abnormal input data testing
+
+
+
+
+
 }

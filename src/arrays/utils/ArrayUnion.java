@@ -18,16 +18,23 @@ public class ArrayUnion {
      *
      */
 
+    private static final String NULL_ARRAY_REF_ECODE_EXCEPTION = "Wrong parameter";
+    private static final String NULL_ARRAY_LREF_MES_EXCEPTION = "Input param lArray reference is null";
+    private static final String NULL_ARRAY_RREF_MES_EXCEPTION = "Input param rArray reference is null";
+    private static final String NULL_ARRAY_REF_MES_EXCEPTION = "Input params lArray and rArray references are nulls";
+
+
+
 
     public PojoNumber[] arraysMerge(PojoNumber[] lArray, PojoNumber[] rArray) throws NullArrayRefException
     {
 
         if (null == lArray && null == rArray)
-        {throw new NullArrayRefException("Input params lArray and rArray references are nulls");}
+        {throw new NullArrayRefException(NULL_ARRAY_REF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
         if (null == lArray)
-        {throw new NullArrayRefException("Input param lArray reference is null");}
+        {throw new NullArrayRefException(NULL_ARRAY_LREF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
         if (null == rArray)
-        {throw new NullArrayRefException("Input param rArray reference is null");}
+        {throw new NullArrayRefException(NULL_ARRAY_RREF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
 
 
         final int lLenght = lArray.length;
@@ -65,11 +72,11 @@ public class ArrayUnion {
     public PojoNumber[] arraysInnerUnion(PojoNumber[] lArray, PojoNumber[] rArray) throws NullArrayRefException
     {
         if (null == lArray && null == rArray)
-        {throw new NullArrayRefException("Input params lArray and rArray references are nulls");}
+        {throw new NullArrayRefException(NULL_ARRAY_REF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
         if (null == lArray)
-        {throw new NullArrayRefException("Input param lArray reference is null");}
+        {throw new NullArrayRefException(NULL_ARRAY_LREF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
         if (null == rArray)
-        {throw new NullArrayRefException("Input param rArray reference is null");}
+        {throw new NullArrayRefException(NULL_ARRAY_RREF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
 
         final int lLenght = lArray.length;
         final int rLenght = rArray.length;
@@ -108,11 +115,11 @@ public class ArrayUnion {
     public PojoNumber[] arraysOuterUnion(PojoNumber[] lArray, PojoNumber[] rArray) throws NullArrayRefException
     {
         if (null == lArray && null == rArray)
-        {throw new NullArrayRefException("Input params lArray and rArray references are nulls");}
+        {throw new NullArrayRefException(NULL_ARRAY_REF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
         if (null == lArray)
-        {throw new NullArrayRefException("Input param lArray reference is null");}
+        {throw new NullArrayRefException(NULL_ARRAY_LREF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
         if (null == rArray)
-        {throw new NullArrayRefException("Input param rArray reference is null");}
+        {throw new NullArrayRefException(NULL_ARRAY_RREF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
 
         final int lLenght = lArray.length;
         final int rLenght = rArray.length;
@@ -163,7 +170,7 @@ public class ArrayUnion {
     {
 
         if (null == array)
-        {throw new NullArrayRefException("Input param array reference is null");}
+        {throw new NullArrayRefException(NULL_ARRAY_LREF_MES_EXCEPTION,NULL_ARRAY_REF_ECODE_EXCEPTION);}
 
         final int length = array.length;
 
