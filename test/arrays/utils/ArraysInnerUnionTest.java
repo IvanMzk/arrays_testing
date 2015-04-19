@@ -10,6 +10,13 @@ import java.util.Collection;
 
 import static org.junit.Assert.*;
 
+/**
+ *
+ * Complete parameterized test for arraysInnerUnion method
+ *
+ */
+
+
 @RunWith(Parameterized.class)
 public class ArraysInnerUnionTest extends ArrayUnionTest {
 

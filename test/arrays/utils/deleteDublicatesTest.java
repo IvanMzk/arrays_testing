@@ -11,6 +11,13 @@ import java.util.Comparator;
 
 import static org.junit.Assert.*;
 
+/**
+ *
+ * Complete parameterized test for deleteDublicates method
+ *
+ */
+
+
 
 @RunWith(Parameterized.class)
 public class deleteDublicatesTest extends ArrayUnionTest {
@@ -47,7 +54,7 @@ public class deleteDublicatesTest extends ArrayUnionTest {
 
         //init input variables
         PojoNumber[] lArray = GetTestArray(this.lArray);
-        
+
         //init class to test
         ArrayUnion testClass = new ArrayUnion();
 

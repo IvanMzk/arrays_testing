@@ -11,6 +11,13 @@ import java.util.Collection;
 import static org.junit.Assert.*;
 import static org.junit.runners.Parameterized.*;
 
+/**
+ *
+ * Complete parameterized test for arraysMerge method
+ *
+ */
+
+
 @RunWith(Parameterized.class)
 public class ArraysMergeTest extends ArrayUnionTest {
 
