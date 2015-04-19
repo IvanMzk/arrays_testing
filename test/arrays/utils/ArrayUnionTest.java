@@ -7,6 +7,13 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * Simple tests for class ArrayUnion
+ * not complete, just for normal input data - not empty arrays or nulls
+ *
+ *
+ */
+
 public class ArrayUnionTest {
 
     protected PojoNumber[] GetTestArray(int[] array){
@@ -148,12 +155,4 @@ public class ArrayUnionTest {
         Assert.assertTrue(CompareTestArrays(returnedValue, expectedValue));
 
     }
-
-
-    //============abnormal input data testing=============
-
-
-
-
-
 }
