@@ -23,9 +23,7 @@ public class ArrayUnion {
     private static final String NULL_ARRAY_RREF_MES_EXCEPTION = "Input param rArray reference is null";
     private static final String NULL_ARRAY_REF_MES_EXCEPTION = "Input params lArray and rArray references are nulls";
 
-
-
-
+    //local code review (vtegza): use automatic formatter @ 21.04.15
     public PojoNumber[] arraysMerge(PojoNumber[] lArray, PojoNumber[] rArray) throws NullArrayRefException
     {
 

@@ -20,6 +20,7 @@ import static org.junit.Assert.*;
 
 
 @RunWith(Parameterized.class)
+//local code review (vtegza): clase should start with Upper case symbol @ 21.04.15
 public class deleteDublicatesTest extends ArrayUnionTest {
 
     private int[] lArray;
@@ -50,6 +51,7 @@ public class deleteDublicatesTest extends ArrayUnionTest {
 
 
     @Test
+    //local code review (vtegza): descibe use case in test name or separate test into the two different test methods @ 21.04.15
     public void testDeleteDublicates() throws Exception {
 
         //init input variables
